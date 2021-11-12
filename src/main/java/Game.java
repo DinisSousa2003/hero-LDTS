@@ -13,6 +13,7 @@ public class Game {
     //Attributes
     private Hero hero;
     private Screen screen;
+    private Arena arena;
 
     //Methods
     public Game(){
@@ -29,6 +30,7 @@ public class Game {
 
             Position position = new Position(10, 10);
             this.hero = new Hero(position);
+            this.arena = new Arena(40, 20, hero);
         }
         catch (IOException e){
             e.printStackTrace();
@@ -39,20 +41,21 @@ public class Game {
         boolean playing = true;
         while(playing) {
             draw();
+
             KeyStroke key = screen.readInput();
             processKey(key);
             switch (key.getKeyType()) {
                 case ArrowUp:
-                    moveHero(hero.moveUp());
+                    arena.moveHero(hero.moveUp());
                     break;
                 case ArrowDown:
-                    moveHero(hero.moveDown());
+                    arena.moveHero(hero.moveDown());
                     break;
                 case ArrowRight:
-                    moveHero(hero.moveRight());
+                    arena.moveHero(hero.moveRight());
                     break;
                 case ArrowLeft:
-                    moveHero(hero.moveLeft());
+                    arena.moveHero(hero.moveLeft());
                     break;
                 case Character:
                     if(key.getCharacter() == 'q'){
@@ -66,17 +69,13 @@ public class Game {
         }
     }
 
-    private void moveHero(Position position){
-        hero.setPosition(position);
-    }
-
     private void processKey(KeyStroke key) {
         System.out.println(key);
     }
 
     private void draw() throws IOException{
         this.screen.clear();
-        hero.draw(screen);
+        arena.draw(screen);
         this.screen.refresh();
     }
 }

@@ -32,7 +32,12 @@ public class Hero {
         this.position = position;
     }
 
-    public void draw(Screen screen) throws IOException {
-        screen.setCharacter(position.getX(), position.getY(), TextCharacter.fromCharacter('X')[0]);
+    public int getHeroX(){
+        return this.position.getX();
     }
+
+    public int getHeroY(){
+        return this.position.getY();
+    }
+
 }
