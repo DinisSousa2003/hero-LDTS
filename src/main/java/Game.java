@@ -11,9 +11,8 @@ import java.io.IOException;
 
 public class Game {
     //Attributes
+    private Hero hero;
     private Screen screen;
-    private int x = 10;
-    private int y = 10;
 
     //Methods
     public Game(){
@@ -27,6 +26,8 @@ public class Game {
             this.screen.setCursorPosition(null); //don't need a cursor
             this.screen.startScreen(); //start screen
             this.screen.doResizeIfNecessary(); //resize if needed
+
+            this.hero = new Hero(10, 10);
         }
         catch (IOException e){
             e.printStackTrace();
@@ -41,24 +42,24 @@ public class Game {
             processKey(key);
             switch (key.getKeyType()) {
                 case ArrowUp:
-                    y -= 1;
+                    hero.moveUp();
                     break;
                 case ArrowDown:
-                    y += 1;
+                    hero.moveDown();
                     break;
                 case ArrowRight:
-                    x += 1;
+                    hero.moveRight();
                     break;
                 case ArrowLeft:
-                    x -= 1;
-                    break;
-                case EOF:
-                    playing = false;
+                    hero.moveLeft();
                     break;
                 case Character:
                     if(key.getCharacter() == 'q'){
                         this.screen.close();
                     }
+                    break;
+                case EOF:
+                    playing = false;
                     break;
             }
         }
@@ -70,7 +71,7 @@ public class Game {
 
     private void draw() throws IOException{
         this.screen.clear();
-        this.screen.setCharacter(x, y, TextCharacter.fromCharacter('X')[0]);
+        hero.draw(screen);
         this.screen.refresh();
     }
 }
