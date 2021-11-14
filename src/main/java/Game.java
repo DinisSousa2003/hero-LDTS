@@ -1,5 +1,8 @@
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -58,7 +61,7 @@ public class Game {
                     arena.moveHero(hero.moveLeft());
                     break;
                 case Character:
-                    if(key.getCharacter() == 'q'){
+                    if(key.getCharacter() == 'q' || key.getCharacter() == 'Q'){
                         this.screen.close();
                     }
                     break;
@@ -75,7 +78,7 @@ public class Game {
 
     private void draw() throws IOException{
         this.screen.clear();
-        arena.draw(screen);
+        arena.paintArena(screen.newTextGraphics());
         this.screen.refresh();
     }
 }
