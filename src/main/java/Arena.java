@@ -42,6 +42,13 @@ public class Arena {
         if(position.getY() < 0 || position.getY() >=  height){
             return false;
         }
+
+        for(Wall wall : walls) {
+            if (wall.getWallX() == position.getX() && wall.getWallY() == position.getY()) {
+                return false;
+            }
+        }
+
         return true;
     }
 
