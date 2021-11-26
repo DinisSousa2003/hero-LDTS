@@ -1,16 +1,9 @@
-import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 
-import java.awt.*;
-import java.io.IOException;
-
-public class Hero extends Element{
-
-    public Hero(Position position){
+public class Monster extends Element{
+    public Monster(Position position){
         super(position);
     }
 
@@ -29,9 +22,7 @@ public class Hero extends Element{
     }
 
     public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#0000FF"));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(getX(), getY()), "X");
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#006633"));
+        graphics.putString(new TerminalPosition(getX(), this.getY()), "O");
     }
-
 }

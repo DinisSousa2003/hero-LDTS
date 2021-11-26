@@ -44,36 +44,48 @@ public class Game {
         boolean playing = true;
         while(playing) {
             draw();
+            arena.moveMonsters();
+            draw();
+
+            if(arena.verifyMonsterCollisions()) {
+                this.screen.close();
+                playing = false;
+            }
 
             KeyStroke key = screen.readInput();
-            processKey(key);
-            switch (key.getKeyType()) {
-                case ArrowUp:
-                    arena.moveHero(hero.moveUp());
-                    break;
-                case ArrowDown:
-                    arena.moveHero(hero.moveDown());
-                    break;
-                case ArrowRight:
-                    arena.moveHero(hero.moveRight());
-                    break;
-                case ArrowLeft:
-                    arena.moveHero(hero.moveLeft());
-                    break;
-                case Character:
-                    if(key.getCharacter() == 'q' || key.getCharacter() == 'Q'){
-                        this.screen.close();
-                    }
-                    break;
-                case EOF:
-                    playing = false;
-                    break;
+            processKey(key, playing);
+            if(arena.verifyMonsterCollisions()) {
+                this.screen.close();
+                playing = false;
             }
         }
     }
 
-    private void processKey(KeyStroke key) {
+    private void processKey(KeyStroke key, boolean playing) throws IOException{
         System.out.println(key);
+
+        switch (key.getKeyType()) {
+            case ArrowUp:
+                arena.moveHero(hero.moveUp());
+                break;
+            case ArrowDown:
+                arena.moveHero(hero.moveDown());
+                break;
+            case ArrowRight:
+                arena.moveHero(hero.moveRight());
+                break;
+            case ArrowLeft:
+                arena.moveHero(hero.moveLeft());
+                break;
+            case Character:
+                if(key.getCharacter() == 'q' || key.getCharacter() == 'Q'){
+                    this.screen.close();
+                }
+                break;
+            case EOF:
+                playing = false;
+                break;
+        }
     }
 
     private void draw() throws IOException{

@@ -9,16 +9,9 @@ public class Wall extends Element{
         super(position);
     }
 
-    public int getWallX(){
-        return getX();
-    }
-
-    public int getWallY(){
-        return getY();
-    }
 
     public void draw(TextGraphics graphics){
         graphics.setBackgroundColor(TextColor.Factory.fromString("#FF0000"));
-        graphics.putString(new TerminalPosition(this.getWallX(), this.getWallY()), " ");
+        graphics.putString(new TerminalPosition(this.getX(), this.getY()), " ");
     }
 }
