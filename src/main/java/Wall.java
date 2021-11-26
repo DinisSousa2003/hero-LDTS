@@ -3,19 +3,18 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Wall {
-    private Position position;
+public class Wall extends Element{
 
     public Wall(Position position){
-        this.position = position;
+        super(position);
     }
 
     public int getWallX(){
-        return this.position.getX();
+        return getX();
     }
 
     public int getWallY(){
-        return this.position.getY();
+        return getY();
     }
 
     public void draw(TextGraphics graphics){
