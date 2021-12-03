@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aor.numbers.ListFiltererTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-03T15:44:14" hostname="DESKTOP-RTCTI3E" time="0.625">
+  <properties/>
+  <testcase name="list_filterer()" classname="com.aor.numbers.ListFiltererTest" time="0.625"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
