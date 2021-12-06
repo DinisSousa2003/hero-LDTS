@@ -18,15 +18,4 @@ public class ListSorterTest {
 
         Assertions.assertEquals(expected, sorted);
     }
-
-    @Test
-    public void bug_sort_8726(){
-        List<Integer> list = Arrays.asList(1, 2, 4, 2);
-        List<Integer> expected = Arrays.asList(1, 2, 2, 4);
-
-        ListSorter sorter = new ListSorter();
-        List<Integer> sorted = sorter.sort(list);
-
-        Assertions.assertEquals(expected, sorted);
-    }
 }

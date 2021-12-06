@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * An utility class to sort list of numbers.
  */
-public class ListSorter implements GenericListSorter{
+public class ListSorter {
     /**
      * Really stupid way to sort a list.
      * @return A sorted version of the list.
@@ -18,7 +18,7 @@ public class ListSorter implements GenericListSorter{
             sorted.add(number);
 
         for (int i = 0; i < sorted.size() - 1; i++)
-            for (int j = i + 1; j < sorted.size(); j++)
+            for (int j = i + 1; j < sorted.size() - 1; j++)
                 if (sorted.get(i) > sorted.get(j))
                     Collections.swap(sorted, i, j);
 
