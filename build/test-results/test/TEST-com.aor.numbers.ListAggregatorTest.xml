@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aor.numbers.ListAggregatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-12-06T23:29:59" hostname="DESKTOP-RTCTI3E" time="0.717">
+<testsuite name="com.aor.numbers.ListAggregatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-12-07T20:05:10" hostname="DESKTOP-RTCTI3E" time="0.856">
   <properties/>
-  <testcase name="distinct_bug_8726()" classname="com.aor.numbers.ListAggregatorTest" time="0.703"/>
-  <testcase name="max_bug_7263()" classname="com.aor.numbers.ListAggregatorTest" time="0.002"/>
+  <testcase name="distinct_bug_8726()" classname="com.aor.numbers.ListAggregatorTest" time="0.836"/>
+  <testcase name="max_bug_7263()" classname="com.aor.numbers.ListAggregatorTest" time="0.006"/>
   <testcase name="max()" classname="com.aor.numbers.ListAggregatorTest" time="0.001"/>
-  <testcase name="min()" classname="com.aor.numbers.ListAggregatorTest" time="0.001"/>
+  <testcase name="min()" classname="com.aor.numbers.ListAggregatorTest" time="0.002"/>
   <testcase name="sum()" classname="com.aor.numbers.ListAggregatorTest" time="0.002"/>
   <testcase name="distinct()" classname="com.aor.numbers.ListAggregatorTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
