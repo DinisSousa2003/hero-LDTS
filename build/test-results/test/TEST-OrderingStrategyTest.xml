@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="OrderingStrategyTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-12-27T12:15:02" hostname="DESKTOP-RTCTI3E" time="0.007">
+  <properties/>
+  <testcase name="impatientStrategy()" classname="OrderingStrategyTest" time="0.002"/>
+  <testcase name="smartStrategyStartClosed()" classname="OrderingStrategyTest" time="0.001"/>
+  <testcase name="smartStrategyStartOpened()" classname="OrderingStrategyTest" time="0.0"/>
+  <testcase name="orderStringRecipe()" classname="OrderingStrategyTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
